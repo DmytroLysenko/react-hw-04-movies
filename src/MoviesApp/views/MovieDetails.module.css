@@ -1,0 +1,50 @@
+.movieContainer {
+  display: flex;
+  /* justify-content: center; */
+  padding: 20px 0;
+}
+
+.posterContainer {
+  width: 20%;
+  margin: 0 20px;
+}
+
+.aboutContainer {
+  width: 50%;
+}
+
+.title {
+  margin: 0;
+}
+
+.backBtn {
+  margin: 20px 0 0 20px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 100%;
+  font-size: 16px;
+  box-shadow: 0px 1px 3px 0px #212121;
+}
+
+.addInfo__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.addInfo__link {
+  /* text-decoration: none; */
+  color: inherit;
+}
+
+.addInfo__item {
+  margin-right: 10px;
+}

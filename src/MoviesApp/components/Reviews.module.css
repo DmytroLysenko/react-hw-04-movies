@@ -1,0 +1,11 @@
+.list {
+  list-style: none;
+}
+
+.author {
+  font-weight: 700;
+}
+
+.content {
+  color: #212121;
+}

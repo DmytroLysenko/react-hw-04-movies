@@ -1,0 +1,15 @@
+.list {
+  /* width: 200px; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  list-style: none;
+}
+.item {
+  width: 100px;
+  margin-right: 5px;
+}
+.name {
+  text-align: center;
+}
