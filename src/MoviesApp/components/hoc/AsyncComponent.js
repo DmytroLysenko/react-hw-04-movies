@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Dinamic loader of Component for code splitting.
+ *
+ * @param {async function} loader = () => import("path/to/Component").
+ *  * @returns {Component} - as a result of new query in XHR
+ */
 const AsyncComponent = (loader) => {
   return class AsyncComponent extends React.Component {
     state = {

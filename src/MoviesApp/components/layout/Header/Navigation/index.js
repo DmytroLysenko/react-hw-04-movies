@@ -1,5 +1,5 @@
 import React from "react";
-import routes from "../routes";
+import routes from "../../../../utils/routes";
 import styles from "./Navigation.module.css";
 
 import { NavLink } from "react-router-dom";

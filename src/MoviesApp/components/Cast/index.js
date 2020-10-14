@@ -1,12 +1,23 @@
 import React from "react";
-import API from "../utils/MoviesAPI";
-import makeImgURL from "../utils/makeImgURL";
+import PropTypes from "prop-types";
+
+import API from "../../utils/MoviesAPI";
+import makeImgURL from "../../utils/makeImgURL";
+
 import styles from "./Cast.module.css";
 
-import Loader from "./Loader";
-import Error from "./Error";
+import Loader from "../Loader";
+import Error from "../Error";
 
 export default class Cast extends React.Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+      }),
+    }),
+  };
+
   state = {
     castList: [],
     isLoading: false,
@@ -47,3 +58,10 @@ export default class Cast extends React.Component {
   }
 }
 
+// Cast.propTypes = {
+//   match: PropTypes.shape({
+//     params: PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//     }),
+//   }),
+// };

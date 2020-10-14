@@ -6,7 +6,7 @@ export default [
     label: "Home",
     exact: true,
     component: lazy(() =>
-      import("./views/Home" /* webpackChunkName: "home" */)
+      import("../views/Home" /* webpackChunkName: "home" */)
     ),
   },
   {
@@ -14,7 +14,7 @@ export default [
     label: null,
     exact: false,
     component: lazy(() =>
-      import("./views/MovieDetails" /* webpackChunkName: "movieDetails" */)
+      import("../views/MovieDetails" /* webpackChunkName: "movieDetails" */)
     ),
   },
   {
@@ -22,7 +22,7 @@ export default [
     label: "Movies",
     exact: false,
     component: lazy(() =>
-      import("./views/Movies" /* webpackChunkName: "movies" */)
+      import("../views/Movies" /* webpackChunkName: "movies" */)
     ),
   },
 ];

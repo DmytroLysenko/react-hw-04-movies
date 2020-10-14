@@ -1,11 +1,22 @@
 import React from "react";
-import API from "../utils/MoviesAPI";
+import PropTypes from "prop-types";
+
+import API from "../../utils/MoviesAPI";
+
 import styles from "./Reviews.module.css";
 
-import Loader from "./Loader";
-import Error from "./Error";
+import Loader from "../Loader";
+import Error from "../Error";
 
 export default class Reviews extends React.Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+      }),
+    }),
+  };
+
   state = {
     reviews: [],
     isLoading: false,

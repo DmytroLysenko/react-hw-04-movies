@@ -1,7 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./SearchBar.module.css";
 
 export default class SearchBar extends React.Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     inputValue: "",
   };
@@ -12,6 +17,7 @@ export default class SearchBar extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({ inputValue: "" });
     this.props.onSubmit(this.state.inputValue.split(" ").join("-"));
   };
 

@@ -1,0 +1,16 @@
+.title {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 300px;
+  margin-bottom: 10px;
+}

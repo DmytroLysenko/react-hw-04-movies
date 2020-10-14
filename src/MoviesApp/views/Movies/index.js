@@ -1,10 +1,10 @@
 import React from "react";
 import queryString from "query-string";
-import API from "../utils/MoviesAPI";
+import API from "../../utils/MoviesAPI";
 
-import SearchBar from "../components/SearchBar";
-import MoviesList from "../components/MoviesList";
-import Error from "../components/Error";
+import SearchBar from "../../components/SearchBar";
+import MoviesList from "../../components/MoviesList";
+import Error from "../../components/Error";
 
 export default class Movies extends React.Component {
   state = {
@@ -36,6 +36,11 @@ export default class Movies extends React.Component {
     const nextQuery = queryString.parse(this.props.location.search).query;
     const nextPage = queryString.parse(this.props.location.search).page;
 
+    if (!nextQuery) {
+      state.movies && this.setState({ movies: null });
+      return;
+    }
+
     if (prevQuery !== nextQuery) {
       this.getMovies(nextQuery, nextPage);
       return;
@@ -57,6 +62,11 @@ export default class Movies extends React.Component {
     const { query, page } = queryString.parse(this.props.location.search);
     this.props.history.push({
       search: `?query=${query}&page=${Number(page) + step}`,
+    });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
     });
   };
 

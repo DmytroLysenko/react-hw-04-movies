@@ -1,13 +1,13 @@
 import React from "react";
-import API from "../utils/MoviesAPI";
-import makeImgURL from "../utils/makeImgURL";
+import API from "../../utils/MoviesAPI";
+import makeImgURL from "../../utils/makeImgURL";
 import styles from "./MovieDetails.module.css";
 import { Link, Route } from "react-router-dom";
 
-import Loader from "../components/Loader";
-import Error from "../components/Error";
-import Cast from "../components/Cast";
-import Reviews from "../components/Reviews";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
+import Cast from "../../components/Cast";
+import Reviews from "../../components/Reviews";
 
 export default class MovieDetails extends React.Component {
   state = {

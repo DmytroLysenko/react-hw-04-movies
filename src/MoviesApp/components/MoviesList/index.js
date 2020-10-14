@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import makeImgURL from "../utils/makeImgURL";
 import styles from "./MoviesList.module.css";
 
-import PageControl from "./PageControl";
+import MoviesListItem from "../MoviesListItem";
+import PageControl from "../PageControl";
 
 const MoviesList = ({
   movies,
@@ -14,24 +13,15 @@ const MoviesList = ({
   location,
 }) =>
   movies.length === 0 ? (
-    <h2>No data for this query</h2>
+    <div>
+      <b>There are no movies for this query...</b>
+    </div>
   ) : (
     <>
       <ul className={styles.list}>
         {movies.map((movie) => (
           <li className={styles.item} key={movie.id}>
-            <Link
-              className={styles.itemLink}
-              to={{
-                pathname: `/movies/${movie.id}`,
-                state: { from: location },
-              }}
-            >
-              <img src={makeImgURL(movie.poster_path)} alt={movie.title} />
-              <p>
-                {movie.title} ({new Date(movie.release_date).getFullYear()})
-              </p>
-            </Link>
+            <MoviesListItem movie={movie} location={location} />
           </li>
         ))}
       </ul>
@@ -43,7 +33,6 @@ const MoviesList = ({
       />
     </>
   );
-
 export default MoviesList;
 
 MoviesList.defaultProps = {
@@ -62,5 +51,9 @@ MoviesList.propTypes = {
   currentPage: PropTypes.number.isRequired,
   onChangePage: PropTypes.func.isRequired,
   isLastPage: PropTypes.bool.isRequired,
-  location: PropTypes.object,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    search: PropTypes.string.isRequired,
+    state: PropTypes.object,
+  }),
 };
